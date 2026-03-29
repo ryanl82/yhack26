@@ -6,7 +6,7 @@ Roamly is an intelligent travel planning platform that helps users go from **"I 
 Instead of forcing users to manually search flights, hotels, events, food, neighborhoods, and daily itineraries across multiple tabs and websites, Roamly brings everything into one streamlined experience.
 
 Demo: 
-https://yhack26-elf9rs29r-chenfenleis-projects.vercel.app/
+yhack26-dusky.vercel.app
 ## The Problem
 
 Trip planning is fragmented, time-consuming, and overwhelming.
