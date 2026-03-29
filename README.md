@@ -1,83 +1,156 @@
-# Roamly
-[yhack26-dusky.vercel.app](url)
+# Roamly 🌍✈️  
+### AI-powered multi-destination trip planning, booking, and itinerary generation
 
-A polished Next.js travel planner with itinerary building, mapped routes, cost breakdowns, saved trips, and live provider integrations.
+Roamly is an intelligent travel planning platform that helps users go from **"I want to travel here"** to **a complete, bookable trip plan** in minutes.
 
-## Getting started
+Instead of forcing users to manually search flights, hotels, events, food, neighborhoods, and daily itineraries across multiple tabs and websites, Roamly brings everything into one streamlined experience.
 
-```bash
-npm install
-npm run dev
-```
+Demo: 
+https://yhack26-elf9rs29r-chenfenleis-projects.vercel.app/
+## The Problem
 
-Open `http://localhost:3000`.
+Trip planning is fragmented, time-consuming, and overwhelming.
 
-## Environment variables
+A user planning a trip often has to:
+- search flights across multiple dates
+- compare hotels in different neighborhoods
+- look up restaurants and activities
+- check concerts, sports, and local events
+- decide how to structure each day
+- re-plan when prices, timing, or preferences change
 
-Create `.env.local` if you want live provider data:
+This gets even harder for:
+- **multi-country trips**
+- **budget-conscious travelers**
+- **group trips**
+- **users unfamiliar with neighborhoods or local transit**
 
-```bash
-GEMINI_API_KEY=
-GEMINI_MODEL=gemini-3-flash-preview
-RAPIDAPI_KEY=
-RAPIDAPI_FLIGHTS_HOST=
-RAPIDAPI_FLIGHTS_URL=
-RAPIDAPI_FLIGHTS_QUERY_TEMPLATE={"from":"{{origin}}","to":"{{destination}}","departDate":"{{startDate}}","returnDate":"{{endDate}}","adults":"{{groupSize}}"}
-RAPIDAPI_HOTELS_HOST=
-RAPIDAPI_HOTELS_URL=
-RAPIDAPI_HOTELS_QUERY_TEMPLATE={"query":"{{destination}}","checkin":"{{startDate}}","checkout":"{{endDate}}","adults":"{{groupSize}}","lat":"{{lat}}","lng":"{{lng}}"}
-TICKETMASTER_API_KEY=
-GOOGLE_MAPS_API_KEY=
-```
+Most tools either:
+- only help with flights,
+- only help with hotels,
+- or generate generic itineraries that are not actionable.
 
-## RapidAPI setup
+Roamly solves that gap.
 
-Pick any flight API and hotel API on RapidAPI, subscribe to them, then copy the host and endpoint URL from each listing into `.env.local`.
+## Our Solution
 
-Example idea:
-- `RAPIDAPI_FLIGHTS_HOST=some-flight-api.p.rapidapi.com`
-- `RAPIDAPI_FLIGHTS_URL=https://some-flight-api.p.rapidapi.com/search`
-- `RAPIDAPI_HOTELS_HOST=some-hotel-api.p.rapidapi.com`
-- `RAPIDAPI_HOTELS_URL=https://some-hotel-api.p.rapidapi.com/search`
+Roamly is an **AI travel copilot** that generates an end-to-end travel plan with real utility.
 
-The `*_QUERY_TEMPLATE` values let you map this app's fields into whatever query parameters your chosen RapidAPI listing expects.
+With Roamly, users can:
+- plan **single-destination** or **multi-destination** trips
+- explore **date-flexible flight suggestions**
+- view **hotel recommendations**
+- discover **restaurants, activities, and local events**
+- get a **day-by-day itinerary**
+- compare neighborhoods and areas
+- open direct booking flows for flights, hotels, and events
+- export their plan into a clean downloadable format
 
-Available placeholders:
-- `{{origin}}`
-- `{{destination}}`
-- `{{destinationCode}}`
-- `{{destinationCountry}}`
-- `{{startDate}}`
-- `{{endDate}}`
-- `{{groupSize}}`
-- `{{budget}}`
-- `{{lat}}`
-- `{{lng}}`
+## Key Features
 
-Without keys, the app still runs using fallback destination data so the planning flow remains usable.
+### ✈️ Smart Flight Planning
+- date-flexible flight suggestions
+- affordability-aware alternatives
+- route-aware booking links
+- direct “Buy Flight” flow
 
-## AI setup
+### 🏨 Hotels + Food Discovery
+- affordable hotel recommendations
+- nearby restaurant suggestions
+- area-aware recommendations based on destination context
+- route summaries for convenience and planning
 
-Gemini uses the Google GenAI SDK and reads `GEMINI_API_KEY` from your environment. You can create and manage the key in Google AI Studio.
+### 🗓️ AI Itinerary Generation
+- day-by-day trip generation
+- no redundant repeated spots
+- categorized experiences
+- cleaner structured trip flow
 
-Optional model override:
-- `GEMINI_MODEL=gemini-3-flash-preview`
+### 🎟️ Events Integration
+- events during the exact dates of travel
+- concerts, sports, and live entertainment
+- ticket-ready recommendations
 
-## Included features
+### 🌐 Multi-Destination Trip Support
+- plan across multiple cities or countries
+- per-stop itinerary generation
+- one master trip overview
+- better for international and complex trips
 
-- destination and country selection
-- budget, traveler count, pace, and stay-style options
-- itinerary generation with cost breakdowns
-- map visualization
-- saved trips in local storage
-- shareable trip links
-- GPS-based nearby place recommendations
-- AI-based itinerary adjustments when Gemini is configured
+### 📄 Book All Essentials
+- centralized booking actions
+- flight, hotel, event, and map links
+- downloadable trip PDF
+- all travel essentials in one place
 
+## Why This Matters
 
-## RapidAPI endpoints wired in this build
+Roamly is not just a “trip ideas” app.
 
-- Flights: `google-flights-live-api` roundtrip endpoint
-- Hotels: `booking-live-api` search endpoint
+It is a **decision-making and booking workflow tool**.
 
-The planner sends POST JSON bodies that match those APIs directly.
+We are solving:
+- **planning fatigue**
+- **fragmented travel research**
+- **choice overload**
+- **inefficient booking flows**
+- **poor support for multi-stop travel**
+
+Our goal is to turn trip planning from a messy manual process into a **personalized, intelligent, and actionable experience**.
+
+## Who It’s For
+
+Roamly is built for:
+- students planning international trips
+- travelers visiting multiple countries
+- friend groups coordinating a vacation
+- users who want a trip plan without spending hours researching
+- budget travelers optimizing dates and destinations
+- travelers who want planning + booking in one workflow
+
+## Tech Stack
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **Zod**
+- **Leaflet / React-Leaflet**
+- **jsPDF**
+- **Google GenAI**
+- **Ticketmaster API**
+- **Google Maps / Flights integration**
+- **pnpm**
+
+## Product Highlights
+
+- AI-generated, user-personalized itineraries
+- multi-stop trip support
+- visually structured tabbed planning workflow
+- categorized events and activities
+- practical booking actions instead of static recommendations
+- exportable travel summary
+
+## What Makes Roamly Different
+
+Unlike generic travel planners, Roamly combines:
+
+- **AI itinerary generation**
+- **booking-oriented outputs**
+- **multi-destination support**
+- **event discovery**
+- **location-aware recommendations**
+- **budget-sensitive flight flexibility**
+
+This makes Roamly more than inspiration.  
+It becomes a **travel execution platform**.
+
+## Vision
+
+We believe travel planning should feel less like project management and more like having a smart travel strategist by your side.
+
+Roamly’s vision is to become the operating system for modern trip planning:
+- personalized
+- dynamic
+- multi-stop
+- booking-ready
+- intelligent from start to finish
